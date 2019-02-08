@@ -7,9 +7,13 @@
 # Enable git tab completion 
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWCOLORHINTS=1
+export GIT_PS1_SHOWUPSTREAM=1
+export GIT_PS1_SHOWSTASHSTATE=1
 
 # Change command prompt
-export PS1="[\[\033[0;31m\]\[\033[0;36m\] \W \[\033[0m\]] \[\033[1;35m\] $(__git_ps1 " (%s)") $ \[\033[0m\]"
+export PS1='[\[\033[0;31m\]\[\033[0;36m\] \W \[\033[0m\]]\[\033[1;35m\]$(__git_ps1 " (%s)") $ \[\033[0m\]'
 
 # Set CLICOLOR if you want Ansi Colors in iTerm2 
 export CLICOLOR=1
@@ -39,9 +43,6 @@ alias e='$EDITOR'
 alias dev='cd ~/dev'
 alias grep='grep --color=auto'
 alias lightsail='ssh ubuntu@52.42.93.133'
-
-# Add g functions
-source ~/.g.sh
 
 mkdircd() {
   mkdir $1 && cd $1
